@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import Test from "./component/test";
+import styled from "styled-components";
+import { View, Button } from "native-base";
+import Home from "./component/Home";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const StyledButton = styled(Button)`
+  border-radius: 20;
+  background-color: red;
+`;
+const Textstyled = styled.Text`
+  font-size: 20;
+  justify-content: center;
+  align-self: center;
+`;
+function App() {
+  return <Home />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
