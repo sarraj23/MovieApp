@@ -1,20 +1,19 @@
 import React from "react";
-import Test from "./component/test";
-import styled from "styled-components";
-import { View, Button } from "native-base";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./component/Home";
+import MoviePage from "./component/MoviePage";
 
-const StyledButton = styled(Button)`
-  border-radius: 20;
-  background-color: red;
-`;
-const Textstyled = styled.Text`
-  font-size: 20;
-  justify-content: center;
-  align-self: center;
-`;
-function App() {
-  return <Home />;
+const { Navigator, Screen } = createStackNavigator();
+export default function App() {
+  return (
+    <>
+      <NavigationContainer>
+        <Navigator initialRouteName="Home">
+          <Screen name="Home" component={Home} />
+          <Screen name="Movie Detail" component={MoviePage} />
+        </Navigator>
+      </NavigationContainer>
+    </>
+  );
 }
-
-export default App;
